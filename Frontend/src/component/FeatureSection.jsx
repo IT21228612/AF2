@@ -53,28 +53,20 @@ export default function Example() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid grid-cols-1 laptop:grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-2 lg:gap-y-16 1">
-            {features.map((feature) => (
-              <div key={feature.name} className="animate-fade-up relative pl-16">
-                <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-bl from-indigo-500 from-10% via-sky-500 via-50% to-emerald-500 to-60%">
-                    <feature.icon
-                      className="h-6 w-6 text-white"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <Link to={feature.link}>
-                  {feature.name}
-                    </Link>
-                 
-                </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600">
-                  {feature.description}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+  {features.map((feature, index) => (
+    <div key={feature.name} className="flex flex-col">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          <Link to={feature.link}>{feature.name}</Link>
+        </h3>
+        <p className="text-base text-gray-600">{feature.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+
       </div>
     </div>
   );

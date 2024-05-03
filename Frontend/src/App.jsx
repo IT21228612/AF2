@@ -15,6 +15,7 @@ import SignUp from './pages/SignUp';
 export default function App() {
   return (
     <BrowserRouter>
+    <div style={{ paddingTop: '64px' }}>
       <HeaderSection />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/carousal" element={<CarousalSection />} />
       </Routes>
       <FooterSection />
+      </div>
     </BrowserRouter>
   );
 }

@@ -3,9 +3,11 @@ import React, {useEffect, useState} from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector, useDispatch } from 'react-redux';
-import { signoutSuccess } from '../redux/user/userSlice';
+import { signoutSuccess } from '../redux/user_ReduxSlice';
 import { FaMoon } from "react-icons/fa";
 import nasaLogo from "../assets/NASA_logo.png";
+
+
 
 
 export default function Header() {
@@ -32,7 +34,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="fixed top-0 left-0 w-full z-50 bg-white h-16 transition-all">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
         <img className="hover:animate-shake animate-once mr-3 h-11 sm:h-9" src={nasaLogo} />
         <span className="font-bold text-xl tracking-tight">
@@ -65,30 +67,24 @@ export default function Header() {
             <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
           </Dropdown>
         ) : (
-          <Link to='/sign-in'>
-            <Button gradientDuoTone='purpleToBlue' outline>
-              Sign In
-            </Button>
-          </Link>
+          <>
+            <Link to='/sign-in'>
+              <Button gradientDuoTone='purpleToBlue' outline>
+                Sign In
+              </Button>
+            </Link>
+            <Link to='/sign-up'>
+              <Button gradientDuoTone='purpleToBlue' outline>
+                Sign Up
+              </Button>
+            </Link>
+          </>
         )}
-        {/* <Link to="/sign-in">
-          <Button gradientDuoTone="purpleToBlue" outline>
-            Sign In
-          </Button>
-        </Link> */}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"}>
           <Link to="/">Home</Link>
-        </Navbar.Link>
-
-        <Navbar.Link active={path === "/sign-in"} as={"div"}>
-          <Link to="/sign-in">Sign In</Link>
-        </Navbar.Link>
-
-        <Navbar.Link active={path === "/sign-up"} as={"div"}>
-          <Link to="/sign-up">Sign Up</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

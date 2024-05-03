@@ -12,7 +12,7 @@ export default function MarsRoverPhoto() {
   
     useEffect(() => {
       async function fetchAPIDataOFMars() {
-        const NASA_KEY = import.meta.env.VITE_NASA_API_KEY;
+        const NASA_KEY = "yFTaevyt3ZE0WKrZzVaiSMqswvhwFm1gpdu4PVU4";
         // console.log(NASA_KEY)
         const url2 =
           "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000" +

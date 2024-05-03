@@ -1,13 +1,8 @@
-/*
-IT21833366
-wijerathna G.D.K
-AF-assignment-01
-React-Frontend-Application-Using-NASA-APIs
- */
 
-import User from '../model/user.model.js';
+
+import User from '../model/user.js';
 import bcryptjs from 'bcryptjs';
-import { errorHandler } from '../utils/error.js';
+
 
 // testing the backend-api
 export const test = (req, res) => {
@@ -17,6 +12,12 @@ export const test = (req, res) => {
 
 };
 
+const errorHandler = (statusCode, message) => {
+  const error = new Error();
+  error.statusCode = statusCode;
+  error.message =  message;
+  return error;
+};
 
 // Router path to modify User
 export const updateUser = async (req, res, next) => {

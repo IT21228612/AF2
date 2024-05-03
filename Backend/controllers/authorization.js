@@ -1,14 +1,15 @@
-/*
-IT21833366
-wijerathna G.D.K
-AF-assignment-01
-React-Frontend-Application-Using-NASA-APIs
- */
+
 //start of the auth routers............
-import User from "../model/user.model.js";
+import User from "../model/user.js";
 import bcryptjs from "bcryptjs";
-import { errorHandler } from "../utils/error.js";
 import jwt from 'jsonwebtoken';
+
+const errorHandler = (statusCode, message) => {
+  const error = new Error();
+  error.statusCode = statusCode;
+  error.message =  message;
+  return error;
+};
 
 // Navigate to Create Sign-Up API
 export const signup = async (req, res, next) => {

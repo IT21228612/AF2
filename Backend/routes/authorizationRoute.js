@@ -1,11 +1,6 @@
-/*
-IT21833366
-wijerathna G.D.K
-AF-assignment-01
-React-Frontend-Application-Using-NASA-APIs
- */
+
 import  express  from "express";
-import { googleSignIn, signin, signup } from "../controllers/auth.controller.js";
+import { googleSignIn, signin, signup } from "../controllers/authorization.js";
 
 const  router = express.Router();
 

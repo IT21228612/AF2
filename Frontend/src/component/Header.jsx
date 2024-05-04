@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signoutSuccess } from '../redux/user_ReduxSlice';
 import { FaMoon } from "react-icons/fa";
 import nasaLogo from "../assets/NASA_logo.png";
+import profileIcon from "../assets/profilePic.png";
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -34,41 +35,39 @@ export default function Header() {
     <Navbar className="fixed top-0 left-0 w-full z-50 bg-white h-16 transition-all  ">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
         <img className="hover:animate-shake animate-once mr-3 h-11 sm:h-9" src={nasaLogo} />
+        <Link to="/">
         <span className="font-bold text-xl tracking-tight">
           NASA API Display
         </span>
+        </Link>
       </div>
 
       <div className="flex gap-2 md:order-2">
         {currentUser ? (
           <Dropdown
+            className="w-60 "
             arrowIcon={false}
             inline
             label={
-              <Avatar alt='user' img={currentUser.profilePicture} rounded />
+              <Avatar alt='user' img={profileIcon} rounded />
             }
           >
             <Dropdown.Header>
-              <span className='block text-sm'>@{currentUser.username}</span>
-              <span className='block text-sm font-medium truncate'>
-                {currentUser.email}
-              </span>
+              <span className='block text-sm font-medium truncate'>{currentUser.username}</span>
             </Dropdown.Header>
-            <Link to={'/dashboard?tab=profile'}>
-              <Dropdown.Item>Profile</Dropdown.Item>
-            </Link>
+           
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            <Dropdown.Item  className="hover:bg-gray-200" onClick={handleSignout}>Sign out</Dropdown.Item>
           </Dropdown>
         ) : (
           <>
             <Link to='/sign-in'>
-              <Button gradientDuoTone='purpleToBlue' outline>
+              <Button  outline>
                 Sign In
               </Button>
             </Link>
             <Link to='/sign-up'>
-              <Button gradientDuoTone='purpleToBlue' outline>
+              <Button outline>
                 Sign Up
               </Button>
             </Link>
@@ -78,10 +77,10 @@ export default function Header() {
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"} className="flex">
-          <Link to="/" className="mx-10">Home</Link>
-          <Link to="/apod" className="mx-10">APOD</Link>
-          <Link to="/mars" className="mx-10">Mars</Link>
-          <Link to="/neo" className="mx-10">NEO</Link>
+          <Link to="/" className="mx-10 hover:animate-shake">Home</Link>
+          <Link to="/apod" className="mx-10 hover:animate-shake">APOD</Link>
+          <Link to="/mars" className="mx-10 hover:animate-shake">Mars</Link>
+          <Link to="/neo" className="mx-10 hover:animate-shake">NEO</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

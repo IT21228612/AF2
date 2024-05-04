@@ -67,7 +67,7 @@ export default {
         changeBackground: {
           '0%': { backgroundImage: 'url("./assets/wallpaper1.jpg")' },
           '33.33%': { backgroundImage: 'url("./assets/wallpaper2.jpg")' },
-          '66.66%': { backgroundImage:'url("./assets/hero.png")' },
+          '66.66%': { backgroundImage:'url("./assets/wallpaper3.jpg")' },
           '100%': { backgroundImage: 'url("./assets/wallpaper4.jpg")' },
         },
       },

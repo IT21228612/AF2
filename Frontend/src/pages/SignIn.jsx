@@ -49,23 +49,18 @@ export default function SignIn() {
   };
   return (
     <div className='min-h-screen mt-20'>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5'>
+      <div className='flex p-3 max-w-xl mx-auto flex-col gap-5'>
         {/* left */}
-        <div className='flex-1'>
+        <div className='mb-6 flex justify-center'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              NASA-API
+            <span className='px-5 py-3 bg-indigo-600 rounded-lg text-white'>
+              NASA API Display
             </span>
-            Reader
           </Link>
-          <p className='text-sm mt-5'>
-            This is a demo project. You can sign in with your email and password
-            or with Google.
-          </p>
         </div>
         {/* right */}
-
-        <div className='flex-1'>
+  
+        <div className='max-w-3xl'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
               <Label value='Your email' />
@@ -86,7 +81,7 @@ export default function SignIn() {
               />
             </div>
             <Button
-              gradientDuoTone='purpleToPink'
+              className='bg-indigo-600 hover:bg-indigo-700'
               type='submit'
               disabled={loading}
             >
@@ -99,10 +94,9 @@ export default function SignIn() {
                 'Sign In'
               )}
             </Button>
-            
           </form>
           <div className='flex gap-2 text-sm mt-5'>
-            <span>Dont Have an account?</span>
+            <span>Don't have an account?</span>
             <Link to='/sign-up' className='text-blue-500'>
               Sign Up
             </Link>
@@ -116,4 +110,5 @@ export default function SignIn() {
       </div>
     </div>
   );
+  
 }

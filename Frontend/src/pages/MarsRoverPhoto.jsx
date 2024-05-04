@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { HiHome } from "react-icons/hi";
 import { Card, Button } from "flowbite-react";
 import { Spinner } from "flowbite-react";
-import Imag1 from "../assets/ContrailX_Ekmen_960.jpg";
+
 import { useSelector, useDispatch } from 'react-redux';
 import { signoutSuccess } from '../redux/user_ReduxSlice';
 

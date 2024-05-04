@@ -1,11 +1,11 @@
 import Reaact, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainSection from "./component/main.jsx";
+import MainSection from "./component/OtherAPISection.jsx";
 import FooterSection from "./component/Footer.jsx";
 import HeaderSection from "./component/Header.jsx";
-import FeatureSection from "./component/FeatureSection.jsx";
-import CarousalSection from "./component/CarousalSection.jsx";
-import HeroSection from "./component/HeroSection.jsx";
+import FeatureSection from "./component/FeaturesSection.jsx";
+import CarousalSection from "./component/NASA_section.jsx";
+import HeroSection from "./component/topBanner.jsx";
 import APOD from "./pages/AstronomyDay.jsx";
 import MARS from "./pages/MarsRoverPhoto.jsx";
 import HomePage from "./pages/Home.jsx";

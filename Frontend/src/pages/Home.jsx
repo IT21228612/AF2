@@ -1,8 +1,8 @@
 import React from 'react';
-import MainSection from "../component/main.jsx";
-import FeatureSection from "../component/FeatureSection.jsx";
-import CarousalSection from "../component/CarousalSection.jsx";
-import HeroSection from "../component/HeroSection.jsx";
+import MainSection from "../component/OtherAPISection.jsx";
+import FeatureSection from "../component/FeaturesSection.jsx";
+import CarousalSection from "../component/NASA_section.jsx";
+import HeroSection from "../component/topBanner.jsx";
 
 
 export default function Home() {

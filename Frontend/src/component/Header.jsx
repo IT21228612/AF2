@@ -1,14 +1,11 @@
-import { Button, Navbar, TextInput, Dropdown,  Avatar, } from "flowbite-react";
-import React, {useEffect, useState} from "react";
+import { Button, Navbar, TextInput, Dropdown, Avatar } from "flowbite-react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector, useDispatch } from 'react-redux';
 import { signoutSuccess } from '../redux/user_ReduxSlice';
 import { FaMoon } from "react-icons/fa";
 import nasaLogo from "../assets/NASA_logo.png";
-
-
-
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -34,18 +31,15 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="fixed top-0 left-0 w-full z-50 bg-white h-16 transition-all">
+    <Navbar className="fixed top-0 left-0 w-full z-50 bg-white h-16 transition-all  ">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
         <img className="hover:animate-shake animate-once mr-3 h-11 sm:h-9" src={nasaLogo} />
         <span className="font-bold text-xl tracking-tight">
-          NASA API READER
+          NASA API Display
         </span>
       </div>
 
       <div className="flex gap-2 md:order-2">
-        <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
-          <FaMoon />
-        </Button>
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
@@ -83,8 +77,11 @@ export default function Header() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link active={path === "/"} as={"div"}>
-          <Link to="/">Home</Link>
+        <Navbar.Link active={path === "/"} as={"div"} className="flex">
+          <Link to="/" className="mx-10">Home</Link>
+          <Link to="/apod" className="mx-10">APOD</Link>
+          <Link to="/mars" className="mx-10">Mars</Link>
+          <Link to="/neo" className="mx-10">NEO</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

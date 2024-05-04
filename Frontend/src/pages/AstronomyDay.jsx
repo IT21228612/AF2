@@ -68,11 +68,10 @@ export default function AstronomyDay() {
         <Breadcrumb.Item href="/" icon={HiHome}>
           Home
         </Breadcrumb.Item>
-        <Breadcrumb.Item href="/feature">Feature</Breadcrumb.Item>
-        <Breadcrumb.Item>APOD</Breadcrumb.Item>
+        <Breadcrumb.Item>Astronomy Picture of the Day</Breadcrumb.Item>
       </Breadcrumb>
       {isLoggedIn && ( // Render only if isLoggedIn is true
-      <div className="w-full max-w-screen-xl mx-auto mt-16 sm:mt-20 lg:mt-24" style={{ marginTop: '2rem' }}>
+      <div className="w-full max-w-screen-xl mx-auto mt-16 mb-10 sm:mt-20 lg:mt-24" style={{ marginTop: '2rem', marginBottom:'1px' }}>
         <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg  ">
           <div className="p-6">
             <div className="grid grid-cols-3 gap-12">
@@ -128,9 +127,9 @@ export default function AstronomyDay() {
       </div>
        )}
       {data ? (
-  <div className="max-w-5xl mb-10 mx-auto mt-16 sm:mt-20 lg:mt-24">
+  <div className="max-w-5xl mb-10 mx-auto  sm:mt-20 lg:mt-24">
     {Array.isArray(data) ? (
-      <div className="max-w-5xl mb-10 mx-auto mt-16 sm:mt-20 lg:mt-24">
+      <div className="max-w-5xl mb-10 mx-auto  sm:mt-20 lg:mt-8">
         {data.map((image) => (
           <div key={image.date} className="mb-10 bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
             <div className="p-6">

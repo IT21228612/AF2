@@ -11,6 +11,7 @@ import MARS from "./pages/MarsRoverPhoto.jsx";
 import HomePage from "./pages/Home.jsx";
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import NeoWS from './pages/NeoWS.jsx';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/main" element={<MainSection />} />
         <Route path="/apod" element={<APOD />} />
         <Route path="/mars" element={<MARS />} />
+        <Route path="/neo" element={<NeoWS />} />
         <Route path="/hero" element={<HeroSection />} />
         <Route path="/feature" element={<FeatureSection />} />
         <Route path="/carousal" element={<CarousalSection />} />

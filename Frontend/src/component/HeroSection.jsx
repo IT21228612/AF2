@@ -14,14 +14,6 @@ export default function HeroSection() {
             of the U.S. federal government responsible for the civil space program,
             aeronautics research, and space research..
             </p>
-
-            <a
-              href="https://www.nasa.gov/" 
-              target="_blank"
-              className="animate-jump animate-once inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-yellow-200 border border-gray-300 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-            >
-              See more ...
-            </a>
           </div>
         </div>
       </section>

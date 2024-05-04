@@ -11,45 +11,38 @@ const features = [
   {
     name: "Mars Rover Photos",
     description:
-      "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
+      "Explore the most mesmerizing sights and uncover the mysteries of the Mars through breathtaking imagery from Rovers",
     icon: GlobeAsiaAustraliaIcon,
     link:"/mars",
   },
   {
     name: "Astronomy Picture of the Day",
     description:
-      "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
+      "Immerse yourself in the captivating beauty of space with APOD - where every day brings a stunning new cosmic wonder. Explore the universe's most mesmerizing sights and uncover the mysteries of the cosmos through breathtaking imagery. It's like having a front-row seat to the greatest show in the universe!",
     icon: CameraIcon,
     link:"/apod",
   },
   {
-    name: "Mars Weather Service API",
+    name: "Asteroids - NeoWs",
     description:
-      "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
+      "With NeoWs (Near Earth Object Web Service) you can explore near earth Asteroid information. ",
     icon: GlobeAltIcon,
-    link:"/mars",
+    link:"/neo",
   },
-  {
-    name: "NASA Image and Video Library",
-    description:
-      "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
-    icon: SparklesIcon,
-    link:"/apod",
-  },
+
 ];
 
 export default function Example() {
   return (
     <div className="bg-white pt-14 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="animate-fade-right mx-auto max-w-2xl lg:text-center">
+        <div className="animate-fade-right mx-auto max-w-2xl lg:text-center ">
           {/* <h2 className="text-base font-semibold leading-7 text-indigo-600 text-center">Deploy faster</h2> */}
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-            Everything you need to explore the Universe
+          Unlock the Cosmos: Discover Features to Navigate Space
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
-          NASA explores the unknown in air and space, innovates
-            for the benefit of humanity, and inspires the world through discovery.
+          Explore with APOD, Mars Rover Snaps, and NEO Updates!
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

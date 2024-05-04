@@ -5,46 +5,97 @@ import Image3 from "../assets/wallpaper4.jpg";
 
 export default function CarouselSection() {
   return (
-    <div className="bg-white py-14 sm:py-32">
-      <div className="mx-auto max-w-9xl px-6 lg:px-8">
-        <div className="mx-auto mt-8 max-h-xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <div className="grid grid-cols-1 gap-7 laptop:grid-cols-2">
-            <div className="animate-flip-down grid h-80 grid-cols-1 sm:h-64 xl:h-80 2xl:h-96">
-              <Carousel>
-                <div className="flex h-full items-center justify-center bg-hero-pattern bg-fixed bg-clip-border bg-origin-padding bg-no-repeat bg-center bg-cover dark:text-white"></div>
-                <div className="flex h-full items-center justify-center bg-hero-pattern1 bg-fixed bg-clip-border bg-origin-padding bg-no-repeat bg-center bg-cover dark:text-white"></div>
-                <div className="flex h-full items-center justify-center bg-hero-pattern2 bg-fixed bg-clip-border bg-origin-padding bg-no-repeat bg-center bg-cover dark:text-white"></div>
-              </Carousel>
-            </div>
-            <div className="animate-flip-down grid h-80 grid-cols-1 sm:h-64 xl:h-80 2xl:h-96">
-              <Card className="max-w-full bg-gray-200">
-                <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
-                Discover More Topics From NASA
-                </h5>
-                <p className="mb-5 text-base text-gray-500 dark:text-gray-400 sm:text-lg">
-                Stay up-to-date on the latest news from NASA–from 
-                Earth to the Moon, the Solar System and beyond..
+        <div className="relative overflow-hidden bg-white">
+          <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+            <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+              <div className="sm:max-w-lg">
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                  Summer styles are finally here
+                </h1>
+                <p className="mt-4 text-xl text-gray-500">
+                  This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
+                  if you live or die.
                 </p>
-                <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 ">
-                  <a
-                    href="https://www.nasa.gov/news/all-news/"
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-3.5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 sm:w-auto"
+              </div>
+              <div>
+                <div className="mt-10">
+                  {/* Decorative image grid */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
                   >
-                    
-                     
-                    <div className="text-left ">
-                      {/* <div className="mb-1 text-xs">Visit on the</div> */}
-                      <div className="-mt-1 font-sans text-sm font-semibold">
-                        Read more
+                    <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                      <div className="flex items-center space-x-6 lg:space-x-8">
+                        <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                          <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                          <div className="h-64 w-44 overflow-hidden rounded-lg">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                        </div>
+                        <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                          <div className="h-64 w-44 overflow-hidden rounded-lg">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                          <div className="h-64 w-44 overflow-hidden rounded-lg">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                          <div className="h-64 w-44 overflow-hidden rounded-lg">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                        </div>
+                        <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                          <div className="h-64 w-44 overflow-hidden rounded-lg">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                          <div className="h-64 w-44 overflow-hidden rounded-lg">
+                            <img
+                              src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                              alt=""
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
+                  </div>
+    
+                  <a
+                    href="#"
+                    className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+                  >
+                    Shop Collection
                   </a>
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    
   );
 }

@@ -37,7 +37,7 @@ export default function Header() {
         <img className="hover:animate-shake animate-once mr-3 h-11 sm:h-9" src={nasaLogo} />
         <Link to="/">
         <span className="font-bold text-xl tracking-tight">
-          NASA API Display
+          NASA API
         </span>
         </Link>
       </div>

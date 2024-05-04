@@ -44,7 +44,7 @@ export default function SignUp() {
         <div className='mb-6'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-5 py-3 bg-indigo-600 rounded-lg text-white'>
-              NASA API Display
+              NASA API
             </span>
           </Link>
         </div>

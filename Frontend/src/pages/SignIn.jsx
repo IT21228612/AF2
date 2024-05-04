@@ -54,7 +54,7 @@ export default function SignIn() {
         <div className='mb-6 flex justify-center'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-5 py-3 bg-indigo-600 rounded-lg text-white'>
-              NASA API Display
+              NASA API
             </span>
           </Link>
         </div>
@@ -95,7 +95,7 @@ export default function SignIn() {
               )}
             </Button>
           </form>
-          <div className='flex gap-2 text-sm mt-5'>
+          <div className='flex justify-center gap-2 text-sm mt-5'>
             <span>Don't have an account?</span>
             <Link to='/sign-up' className='text-blue-500'>
               Sign Up

@@ -16,22 +16,22 @@ const apis = [
   },
   {
     name: "EONET",
-    description: "The Earth Observatory Natural Event Tracker ",
+    description: "The Earth Observatory Natural Event Tracker. ",
     link: "https://api.nasa.gov/"
   },
   {
     name: "Open Science Data Repository",
-    description: ` Programmatic interface for the Open Science Data Repository website`,
+    description: ` Programmatic interface for the Open Science Data Repository website.`,
     link: "https://api.nasa.gov/"
   },
   {
     name: "Satellite Situation Center",
-    description: " System to cast geocentric spacecraft location information into a framework of (empirical) geophysical regions",
+    description: " System to cast geocentric spacecraft location information into a framework of (empirical) geophysical regions.",
     link: "https://api.nasa.gov/"
   },
   {
     name: "TLE API",
-    description: "Two line element data for earth-orbiting objects at a given point in time ",
+    description: "Two line element data for earth-orbiting objects at a given point in time. ",
     link: "https://api.nasa.gov/"
   },
   {
@@ -41,7 +41,7 @@ const apis = [
   },
   {
     name: "Techport",
-    description: "API to make NASA technology project data available in a machine-readable format",
+    description: "API to make NASA technology project data available in a machine-readable format.",
     link: "https://api.nasa.gov/"
   },
 ];
@@ -57,21 +57,24 @@ export default function main() {
       <div className="grid gap-8 laptop:grid-cols-4 tablet:grid-cols-1 grid-flow-col-2 justify-stretch">
         {apis.map((api, index) => (
           <div key={index} className="flex justify-center">
-            <Card className="max-w-sm w-full animate-rotate-y">
-              <h5 className="mt-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {api.name}
-              </h5>
-              <div className="mt-4">
-                <p className="font-normal text-gray-700 dark:text-gray-400 break-words text-ellipsis">
-                  {api.description}
-                </p>
+            <Card className=" animate-rotate-y max-w-sm w-full h-full flex flex-col">
+              <div className="flex text-center flex-col flex-grow">
+                <h5 className="mt-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {api.name}
+                </h5>
+                <div className="mt-4 flex-grow">
+                  <p className="font-normal text-justify text-gray-700 dark:text-gray-400 break-words text-ellipsis">
+                    {api.description}
+                  </p>
+                </div>
               </div>
-              <pre></pre>
-              <Link to={api.link}>
-                <Button className="hover:animate-shake bg-indigo-600   w-full  ">
-                  Read more
-                </Button>
-              </Link>
+              <div className="mt-auto">
+                <Link to={api.link}>
+                  <Button className="hover:animate-shake bg-indigo-600 w-full">
+                    Read more
+                  </Button>
+                </Link>
+              </div>
             </Card>
           </div>
         ))}

@@ -62,7 +62,7 @@ export default function Header() {
         ) : (
           <>
             <Link to='/sign-in'>
-              <Button  outline>
+              <Button className="hover:bg-indigo-700" outline>
                 Sign In
               </Button>
             </Link>

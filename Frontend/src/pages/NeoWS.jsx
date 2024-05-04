@@ -6,9 +6,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signoutSuccess } from '../redux/user_ReduxSlice';
 
 export default function NeoWS() {
+
+  const currentDate = new Date().toISOString().split('T')[0]; 
+
   const [data, setData] = useState(null);
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [startDate, setStartDate] = useState(currentDate);
+  const [endDate, setEndDate] = useState(currentDate);
   const [isLoading, setIsLoading] = useState(false); // Add isLoading state
 
   // Set isLoggedIn based on whether currentUser exists or not
@@ -50,9 +53,9 @@ export default function NeoWS() {
           formattedData.push(formattedObject);
         });
       });
-  
-      // Update the state with the formatted data
-      setData(formattedData);
+
+      // Update the state with the formatted data sorted by date in descending order
+      setData(formattedData.sort((a, b) => new Date(b.close_approach_date) - new Date(a.close_approach_date)));
   
       console.log("Formatted Data\n", formattedData);
     } catch (err) {
@@ -84,21 +87,6 @@ export default function NeoWS() {
     
   };
   
-  //sort array data
-  const sortBy = (key, reverse = false) => {
-    const sortedData = [...data].sort((a, b) => {
-      let comparison = 0;
-      if (a[key] > b[key]) {
-        comparison = 1;
-      } else if (a[key] < b[key]) {
-        comparison = -1;
-      }
-      return reverse ? comparison * -1 : comparison;
-    });
-    setData(sortedData);
-  };
-  
-
 
   return (
     <div className="flex flex-col space-y-4 px-5 py-8">
@@ -110,39 +98,40 @@ export default function NeoWS() {
       </Breadcrumb>
       {isLoggedIn && ( // Render only if isLoggedIn is true
       <div className="w-4/5 max-w-screen-xl mx-auto mt-16 mb-10 sm:mt-20 lg:mt-24" style={{ marginTop: '2rem', marginBottom:'1px' }}>
-        <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg  ">
-          <div className="p-6">
-            <div className="grid grid-cols-1 gap-10">
-             
-              {/* Column 2: Pick a date range */}
-              <div>
-                <h5 className="text-lg font-semibold text-gray-900 dark:text-white">Pick a Date Range</h5>
-                <div className="grid grid-cols-2 gap-10">
-                  <input
-                    type="date"
-                    className="mt-2 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
-                    placeholder="Start Date"
-                    value={startDate}
-                    onChange={(e) => setStartDate(e.target.value)}
-                  />
-                  <input
-                    type="date"
-                    className="mt-2 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
-                    placeholder="End Date"
-                    value={endDate}
-                    onChange={(e) => setEndDate(e.target.value)}
-                  />
-                </div >
-                <div className="text-center">
-                  <button onClick={handleDateRangeSubmit} className="mt-4 w-1/7 px-20 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                    {isLoading ? <Spinner aria-label="Center-aligned spinner example" size="md" color="white" /> : "GO"}
-                  </button>
-                </div>
+      <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg  ">
+        <div className="p-6">
+          <div className="grid grid-cols-1 gap-10">
+            {/* Column 2: Pick a date range */}
+            <div>
+              <h5 className="text-lg font-semibold text-gray-900 dark:text-white">Pick a Date Range</h5>
+              <div className="grid grid-cols-2 gap-10">
+                <input
+                  type="date"
+                  className="mt-2 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
+                  placeholder="Start Date"
+                  value={startDate}
+                  max={currentDate} // Set max attribute to current date
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+                <input
+                  type="date"
+                  className="mt-2 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
+                  placeholder="End Date"
+                  value={endDate}
+                  max={currentDate} // Set max attribute to current date
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </div>
+              <div className="text-center">
+                <button onClick={handleDateRangeSubmit} className="mt-4 w-1/7 px-20 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                  {isLoading ? <Spinner aria-label="Center-aligned spinner example" size="md" color="white" /> : "GO"}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
        )}
       {data ? (
   <div >

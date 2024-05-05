@@ -28,6 +28,7 @@ mongoose.connect(
 const app = express();
 
 // Allow requests from specific origin(s)
+//backend will not approve requests from frontend without this 
 app.use(cors({
     origin: 'https://nasa-api-jeewa.netlify.app'
   }));

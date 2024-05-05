@@ -17,7 +17,7 @@ export default function Header() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch('https://nasa-api-pbty.onrender.com/api/user/signout', {
+      const res = await fetch('https://nasa-api-pbty.onrender.com/api/user/signout', { //change url to "/api/auth/signout" if local host
         method: 'POST',
       });
       const data = await res.json();

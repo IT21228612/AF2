@@ -27,7 +27,7 @@ export default function SignIn() {
       // setLoading(true);
       // setErrorMessage(null);
       console.log(`fetch start`);
-      const res = await fetch('https://nasa-api-pbty.onrender.com/api/auth/signin', {
+      const res = await fetch('https://nasa-api-pbty.onrender.com/api/auth/signin', { //change url to "/api/auth/signin" if local host
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

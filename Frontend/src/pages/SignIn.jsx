@@ -26,15 +26,22 @@ export default function SignIn() {
       dispatch(signInStart());
       // setLoading(true);
       // setErrorMessage(null);
+      console.log(`fetch start`);
       const res = await fetch('/api/auth/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+
+      console.log(`fetch end`);
+
+
       const data = await res.json();
+
       if (data.success === false) {
         dispatch(signInFailure(data.message));
-        // return setErrorMessage(data.message);
+        console.log(`data unsuccess`);
+        
       }
       // setLoading(false);
       if(res.ok) {
@@ -42,6 +49,7 @@ export default function SignIn() {
         navigate('/');
       }
     } catch (error) {
+      console.log(`fetch error`);
       dispatch(signInFailure(error.message));
       // setErrorMessage(error.message);
       // setLoading(false);

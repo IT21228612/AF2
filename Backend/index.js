@@ -1,9 +1,4 @@
-/*
-IT21833366
-wijerathna G.D.K
-AF-assignment-01
-React-Frontend-Application-Using-NASA-APIs
- */
+
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -16,7 +11,7 @@ const MONGO_URI = "mongodb+srv://jeewa2000:itpIT2080@mernapp.4rrg7bl.mongodb.net
 
 dotenv.config();
 mongoose.connect(
-   MONGO_URI
+   process.env.MONGO_URI
 )
 .then(() =>{
     console.log("MongoDB is connected");

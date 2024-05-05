@@ -3,8 +3,7 @@
 import User from "../model/user.js";
 import bcryptjs from "bcryptjs";
 import jwt from 'jsonwebtoken';
-
-const JWT_SECRET = "VpXZKj/e7PcoHuz/oDJLa7vEDCZmwh/c9NR9r0kUm4U="
+import dotenv from 'dotenv';
 
 const errorHandler = (statusCode, message) => {
   const error = new Error();
@@ -54,7 +53,7 @@ export const signin = async (req, res, next) => {
       }
       const token = jwt.sign(
         { id: validUser._id, isAdmin: validUser.isAdmin },
-        JWT_SECRET
+        process.env.JWT_SECRET
       );
       const { password: pass, ...rest } = validUser._doc;
       res
@@ -76,7 +75,7 @@ export const signin = async (req, res, next) => {
       if (user) {
         const token = jwt.sign(
           { id: user._id, isAdmin: user.isAdmin },
-          JWT_SECRET
+          process.env.JWT_SECRET
         );
         const { password, ...rest } = user._doc;
         res
@@ -101,7 +100,7 @@ export const signin = async (req, res, next) => {
         await newUser.save();
         const token = jwt.sign(
           { id: newUser._id, isAdmin: newUser.isAdmin },
-          JWT_SECRET
+          process.env.JWT_SECRET
         );
         const { password, ...rest } = newUser._doc;
         res

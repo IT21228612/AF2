@@ -9,7 +9,7 @@ import cookieParser from 'cookie-parser';
 // Load environment variables from .env file
 dotenv.config();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000; // Default to 3000 if PORT is not set in environment variables;
 
 
 dotenv.config();

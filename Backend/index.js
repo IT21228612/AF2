@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import userRoute from './routes/userRoute.js';
 import authRoute  from './routes/authorizationRoute.js';
 import cookieParser from 'cookie-parser';
-const cors = require('cors');
+import cors from 'cors'; //  import cors
 
 // Load environment variables from .env file
 dotenv.config();
@@ -31,7 +31,7 @@ const app = express();
 app.use(cors({
     origin: 'https://nasa-api-jeewa.netlify.app'
   }));
-  
+
 app.use(express.json());
 app.use(cookieParser());
 app.listen(port, () =>{

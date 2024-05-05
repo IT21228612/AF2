@@ -6,10 +6,9 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 const errorHandler = (statusCode, message) => {
-  const error = new Error();
-  error.statusCode = statusCode;
-  error.message =  message;
-  return error;
+  return (req, res, next) => {
+    res.status(statusCode).json({ error: message });
+  };
 };
 
 // Navigate to Create Sign-Up API

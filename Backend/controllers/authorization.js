@@ -4,6 +4,8 @@ import User from "../model/user.js";
 import bcryptjs from "bcryptjs";
 import jwt from 'jsonwebtoken';
 
+const JWT_SECRET = "VpXZKj/e7PcoHuz/oDJLa7vEDCZmwh/c9NR9r0kUm4U="
+
 const errorHandler = (statusCode, message) => {
   const error = new Error();
   error.statusCode = statusCode;
@@ -52,7 +54,7 @@ export const signin = async (req, res, next) => {
       }
       const token = jwt.sign(
         { id: validUser._id, isAdmin: validUser.isAdmin },
-        process.env.JWT_SECRET
+        JWT_SECRET
       );
       const { password: pass, ...rest } = validUser._doc;
       res
@@ -74,7 +76,7 @@ export const signin = async (req, res, next) => {
       if (user) {
         const token = jwt.sign(
           { id: user._id, isAdmin: user.isAdmin },
-          process.env.JWT_SECRET
+          JWT_SECRET
         );
         const { password, ...rest } = user._doc;
         res
@@ -99,7 +101,7 @@ export const signin = async (req, res, next) => {
         await newUser.save();
         const token = jwt.sign(
           { id: newUser._id, isAdmin: newUser.isAdmin },
-          process.env.JWT_SECRET
+          JWT_SECRET
         );
         const { password, ...rest } = newUser._doc;
         res

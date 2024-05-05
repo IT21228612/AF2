@@ -11,10 +11,12 @@ import userRoute from './routes/userRoute.js';
 import authRoute  from './routes/authorizationRoute.js';
 import cookieParser from 'cookie-parser';
 
+const MONGO_URI = "mongodb+srv://jeewa2000:itpIT2080@mernapp.4rrg7bl.mongodb.net/?retryWrites=true&w=majority&appName=MERNapp"
+
 
 dotenv.config();
 mongoose.connect(
-   process.env.MONGO_URI
+   MONGO_URI
 )
 .then(() =>{
     console.log("MongoDB is connected");

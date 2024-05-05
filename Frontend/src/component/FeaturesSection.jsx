@@ -19,7 +19,7 @@ const features = [
       the Mars through breathtaking imagery from Rovers. This feature is designed to collect image data gathered by NASA's 
       Curiosity, Opportunity, and Spirit rovers on Mars. Those Rovers have several cameras and Each camera has a 
       unique function and perspective.
-      Sign up Now to get the full potential of this feature !!`,
+      `,
     icon: GlobeAsiaAustraliaIcon,
     link:"/mars",
     image: Mars
@@ -27,7 +27,10 @@ const features = [
   {
     name: "Astronomy Picture of the Day - APOD",
     description:
-      "Immerse yourself in the captivating beauty of space with APOD - where every day brings a stunning new cosmic wonder. Explore the universe's most mesmerizing sights and uncover the mysteries of the cosmos through breathtaking imagery. It's like having a front-row seat to the greatest show in the universe. Sign up Now to get the full potential of this feature !!",
+      `Immerse yourself in the captivating beauty of space with APOD - where every day 
+      brings a stunning new cosmic wonder. Explore the universe's most mesmerizing sights and 
+      uncover the mysteries of the cosmos through breathtaking imagery. It's like having a front-row 
+      seat to the greatest show in the universe.`,
     icon: CameraIcon,
     link:"/apod",
     image: Apod
@@ -37,7 +40,7 @@ const features = [
     description:
       `Discover the secrets of near-Earth asteroids with NeoWs (Near Earth Object Web Service). Dive into
        their orbits, sizes, and compositions. Sign up now to explore this cosmic database 
-       and stay ahead of any celestial surprises. Sign up Now to get the full potential of this feature !!`,
+       and stay ahead of any celestial surprises. `,
     icon: GlobeAltIcon,
     link:"/neo",
     image: Neo
@@ -68,7 +71,8 @@ export default function Example() {
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
             {feature.name}
           </h3>
-          <p className="text-base text-justify text-gray-600">{feature.description}</p>
+          <p className="text-base text-justify text-gray-600">{feature.description} <br></br><br>
+          </br>Sign up Now to get the full potential of this feature !!</p>
         </div>
       </div>
     </Link>

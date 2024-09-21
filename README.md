@@ -45,3 +45,4 @@ API info - <https://api.nasa.gov/>
 - CSS collisions – getting help from online resources
 - Choosing attractive UI components – Looking Tailwind website
 - Understanding NASA API response data – sending multiple requests manually and analyzing the responses
+![nasa-api-jeewa netlify app](https://github.com/user-attachments/assets/e00cb2f9-ce27-479d-b8eb-287625edb6c3)
